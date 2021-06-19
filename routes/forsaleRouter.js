@@ -2,7 +2,7 @@ const express = require("express");
 const forsaleRouter = express.Router();
 
 forsaleRouter
-  .route("/buy/forsale")
+  .route("/buy/for-sale")
   .all((req, res, next) => {
     res.statusCode = 200;
     res.setHeader("Content-Type", "text/plain");
@@ -25,7 +25,7 @@ forsaleRouter
   });
 
 forsaleRouter
-  .route("/buy/forsale/:forsaleName")
+  .route("/buy/for-sale/:forsaleName")
   .all((req, res, next) => {
     res.statusCode = 200;
     res.setHeader("Content-Type", "text/plain");
