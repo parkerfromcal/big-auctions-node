@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const auctionRouter = require("./routes/auctionRouter");
 const forsaleRouter = require("./routes/forsaleRouter");
+const loginRouter = require("./routes/loginRouter");
 
 const hostname = "localhost";
 const port = 3000;
@@ -12,6 +13,7 @@ app.use(express.json());
 
 app.use("/buy/auctions", auctionRouter);
 app.use("/buy/for-sale", forsaleRouter);
+app.use("/login", loginRouter);
 
 app.use(express.static(__dirname + "/public"));
 

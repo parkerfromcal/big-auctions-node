@@ -1,13 +1,9 @@
 const express = require("express");
+const ForSale = require("../models/forsale");
 const forsaleRouter = express.Router();
 
 forsaleRouter
   .route("/buy/for-sale")
-  .all((req, res, next) => {
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "text/plain");
-    next();
-  })
   .get((req, res) => {
     res.end("Send all for sale items");
   })
@@ -25,7 +21,7 @@ forsaleRouter
   });
 
 forsaleRouter
-  .route("/buy/for-sale/:forsaleName")
+  .route("/buy/for-sale/:forsaleId")
   .all((req, res, next) => {
     res.statusCode = 200;
     res.setHeader("Content-Type", "text/plain");
@@ -44,7 +40,7 @@ forsaleRouter
     res.end(`Will update single for sale item: ${req.body.name}`);
   })
   .delete((req, res) => {
-    res.end(`Will delete for sale item: ${req.params.forsaleName}`);
+    res.end(`Will delete for sale item: ${req.params.forsaleId}`);
   });
 
 module.exports = forsaleRouter;

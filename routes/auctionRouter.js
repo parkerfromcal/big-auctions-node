@@ -25,7 +25,7 @@ auctionRouter
   });
 
 auctionRouter
-  .route("/buy/auctions/:auctionName")
+  .route("/buy/auctions/:auctionId")
   .all((req, res, next) => {
     res.statusCode = 200;
     res.setHeader("Content-Type", "text/plain");
@@ -44,7 +44,7 @@ auctionRouter
     res.end(`Will update single auction: ${req.body.name}`);
   })
   .delete((req, res) => {
-    res.end(`Will delete auction: ${req.params.auctionName}`);
+    res.end(`Will delete auction: ${req.params.auctionId}`);
   });
 
 module.exports = auctionRouter;
