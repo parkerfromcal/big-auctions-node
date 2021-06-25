@@ -1,5 +1,4 @@
 const express = require("express");
-const ForSale = require("../models/forsale");
 const forsaleRouter = express.Router();
 
 forsaleRouter
